@@ -1,10 +1,10 @@
-import Button from './Button';
+import Button from "./Button";
 
 function App() {
   return (
     <div>
       <div>
-        <Button success rounded outline>
+        <Button outline success rounded>
           Click me!!
         </Button>
       </div>
