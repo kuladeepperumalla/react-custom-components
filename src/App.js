@@ -1,4 +1,5 @@
-import Accordion from './components/Accordion'
+import Accordion from './components/Accordion';
+import ButtonPage from './pages/ButtonPage'
 
 
 function App() {
@@ -19,7 +20,11 @@ const items = [
     content: "You can use react on any project you want",
   },
 ];
-return <Accordion items={items}/>
+return (
+<div>
+<Accordion items={items}/> <ButtonPage />
+</div>)
+
 }
 
 export default App;
