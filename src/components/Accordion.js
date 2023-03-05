@@ -30,7 +30,15 @@ function Accordion({items}){
           </div>
         );
     })
-    return <div className="border-x border-t rounded">{renderedItems}</div>
+    return (
+      <div className="border-x border-t rounded">
+        {" "}
+        <div className="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+          <h1>Accordion</h1>
+        </div>
+        {renderedItems}
+      </div>
+    );
 }
 
 export default Accordion;
