@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { GoChevronDown } from 'react-icons/go';
+import Panel from './Panel';
 
-function Dropdown({ options, selection, onSelect }) {
+function Dropdown({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -11,10 +13,12 @@ function Dropdown({ options, selection, onSelect }) {
     // CLOSE DROPDOWN
     setIsOpen(false);
     // WHAT OPTION DID THE USER CLICK ON???
-    onSelect(option)
+    onChange(option)
   };
 
-  const renderedOptions = options.map((option) => {
+
+
+  const renderedOptions = options.map((option,i) => {
     return (
       <div onClick={() => handleOptionClick(option)} key={option.value}>
         {option.label}
@@ -22,22 +26,16 @@ function Dropdown({ options, selection, onSelect }) {
     );
   });
 
-  let content = 'select ...';
 
-  if(selection){
-    content = selection.label
-  }
 
   return (
-    <div>
-      <div>
-        <div className="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-          <h1>Drop Down Menu</h1>
-        </div>{" "}
-      </div>
-
-      <div onClick={handleClick}>{content}</div>
-      {isOpen && <div>{renderedOptions}</div>}
+    <div className='w-48 relative'>
+      <Panel className="flex justify-between items-center cursor-pointer" onClick={handleClick}>
+        {value?.label || 'select..'}
+        <GoChevronDown />
+        </Panel>
+      {isOpen && <div>{renderedOptions}
+      </div>}
     </div>
   );
 }
