@@ -37,7 +37,10 @@ function App() {
     <div>
       <Accordion items={items} />
       <ButtonPage />
+      <div className="flex">
       <Dropdown options={options} value={select} onChange={handleSelect} />
+      <Dropdown options={options} value={select} onChange={handleSelect} />
+      </div>
     </div>
   );
 }
