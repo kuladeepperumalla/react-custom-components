@@ -5,6 +5,7 @@ const NavigationContext = createContext();
 
 function NavigationProvider({children}){
     const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
     useEffect(() => {
         const handler = () => {
             setCurrentPath(window.location.pathname)
@@ -12,12 +13,17 @@ function NavigationProvider({children}){
         window.addEventListener('popstate', handler);
 
         return () => {
-            window.addEventListener('popstate', handler)
+            window.removeEventListener('popstate', handler)
         }
     }, []);
+
+    const navigate = (to) => {
+        window.history.pushState({},'', to);
+        setCurrentPath(to)
+    }
+
     return (
-        <NavigationContext.Provider value={{}}>
-            {currentPath}
+        <NavigationContext.Provider value={{navigate, currentPath}}>
             {children}
         </NavigationContext.Provider>
     )
