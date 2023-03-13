@@ -6,7 +6,8 @@ function Sidebar(){
       { lable: "Dropdown", path: "/" },
       { lable: "Accordion", path: "/accordion" },
       { lable: "Buttons", path: "/buttons" },
-      { lable: "Modal", path: "/modal" }
+      { lable: "Modal", path: "/modal" },
+      { lable: "Table", path: "/table" }
     ];
 
     const renderedLinks = links.map((link) => {
