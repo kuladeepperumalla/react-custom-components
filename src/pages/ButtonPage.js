@@ -10,7 +10,7 @@ function ButtonPage() {
     <div>
       <div>
         <Button
-          secondary
+          primary
           outline
           rounded
           className="mb-5"
