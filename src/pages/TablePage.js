@@ -12,6 +12,7 @@ function SortableTablePage(){
     {
         label: "Name",
         render: (fruit) => fruit.name,
+        sortValue: (fruit) => {return fruit.name}
     },
     {
         label: "Color",
@@ -21,9 +22,8 @@ function SortableTablePage(){
         label: "Score",
         render: (fruit) => fruit.score,
         header: () => <th className="bg-red-300">score</th>,
-        headerFunction: () => {
-
-        }
+        sortValue: (fruit) => {return fruit.score}
+  
     },
     ];
 
