@@ -1,6 +1,6 @@
 import SortableTable from "../components/SortableTable";
 
-function SortableTablePage(){
+function TablePage(){
     const data = [
         {name:'orange', color:'bg-orange-500', score:5},
         {name:'apple', color:'bg-red-500', score:3},
@@ -40,4 +40,4 @@ function SortableTablePage(){
     )
 }
 
-export default SortableTablePage;
+export default TablePage;
