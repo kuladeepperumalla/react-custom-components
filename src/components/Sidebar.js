@@ -7,7 +7,8 @@ function Sidebar(){
       { lable: "Accordion", path: "/accordion" },
       { lable: "Buttons", path: "/buttons" },
       { lable: "Modal", path: "/modal" },
-      { lable: "Table", path: "/table" }
+      { lable: "Table", path: "/table" },
+      { lable: "Counter", path: "/counter" },
     ];
 
     const renderedLinks = links.map((link) => {
